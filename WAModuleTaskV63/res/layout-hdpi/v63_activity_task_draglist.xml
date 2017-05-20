@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_panel" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <wa.android.task.view.DragListView
+                android:id="@+id/taskdrag_content_panel"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_below="@+id/draglistaddbtn" >
+
+            </wa.android.task.view.DragListView>
+
+            <Button
+                android:id="@+id/draglistaddbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/addbtn"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp" 
+                android:paddingBottom="10dp"/>
+
+        </RelativeLayout>
+
+</LinearLayout>

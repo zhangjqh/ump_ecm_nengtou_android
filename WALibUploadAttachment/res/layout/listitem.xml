@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="75px"
+    android:orientation="horizontal" >
+<RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="75px">
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/commonPadding"
+        android:background="@drawable/delete"
+        android:visibility="gone"
+        android:focusable="false"
+        android:text="删除" />
+
+    <TextView
+        android:id="@+id/NameTextView"
+        android:layout_width="240px"
+        android:layout_height="26px"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="15px"
+        android:layout_toRightOf="@+id/ImageView"
+        android:textSize="@dimen/commonFontSizeMid" />
+
+    <TextView
+        android:id="@+id/SizeTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/deleteBtn"
+        android:layout_toRightOf="@+id/NameTextView"
+        android:textSize="@dimen/commonFontSizeLittle" />
+
+    <ImageView
+        android:id="@+id/ImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/common_null_icon"
+        android:focusable="false" />
+
+</RelativeLayout>
+
+
+
+</RelativeLayout>

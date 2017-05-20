@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg" >
+    <include
+        layout="@layout/title_panel" />
+    <RelativeLayout
+        android:id="@+id/taskaddperson_searchPanel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:paddingLeft="@dimen/commonPadding"
+        android:paddingRight="@dimen/commonPadding" >
+        <!--   android:background="@drawable/common_searchpanel_bg"
+        		android:background="@drawable/common_search_cancelbtn_bg"
+        -->
+        <Button
+            android:id="@+id/taskaddperson_cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/commonPadding"
+            android:visibility="gone"
+            android:textColor="@color/red"
+            android:background="@android:color/transparent"
+            android:layout_centerVertical="true"
+            android:text="取消" />
+        <EditText 
+	        android:id="@+id/taskaddperson_searchEditText"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_toLeftOf="@id/taskaddperson_cancelBtn"
+	        android:singleLine="true"
+	        android:inputType="text"
+	        android:maxLength="50"
+	        android:imeOptions="actionSearch"
+	        android:imeActionId="3"
+	        android:layout_centerVertical="true"
+	        android:background="@drawable/search_bar_edit_normal"
+	        android:drawableLeft="@drawable/common_search_icon"
+	        android:textSize="@dimen/commonFontSizeMid" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/taskaddperson_dataPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+	    <wa.android.libs.listview.WALoadListView 
+	        android:id="@+id/taskaddperson_userListView"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:cacheColorHint="#00000000"
+	        android:listSelector="@null"
+	        android:divider="@null" />
+	    <LinearLayout
+		    android:id="@+id/taskaddperson_nodataPanel"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:gravity="center"
+		    android:visibility="gone" >
+		    <TextView 
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_gravity="center"
+			    android:background="@drawable/common_nodata_bg"
+			    android:text="@string/nodata"
+			    android:gravity="center" />
+		</LinearLayout>
+	</LinearLayout>
+    <ListView
+        android:id="@+id/taskaddperson_searchListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" 
+        android:divider="@null"/>
+    
+ </LinearLayout>

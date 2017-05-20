@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/WAFramework"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/WALibHTMLTools"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/WALibPiccompress"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/WALibUploadAttachment"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/WAModuleTask"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/WAModuleTaskV63"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ECMPush"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ECMFeedBack"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

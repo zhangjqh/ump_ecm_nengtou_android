@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/titlelayout"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:background="@drawable/yonyou_ma_title_bg"
+    android:gravity="center_vertical" >
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="64dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="8dp"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:visibility="gone" 
+        android:textSize="17dp"
+        android:background="@drawable/btn_back"/>
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="67dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:singleLine="true"
+        android:textColor="#FF222222"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textColor="#ff0000"
+        android:textSize="17dp"
+        android:layout_marginRight="8dp"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_framlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEDED"
+    android:orientation="vertical" >
+
+    <include layout="@layout/yonyou_ma_title_left_right" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/content_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:paddingTop="10dip"
+                android:paddingBottom="10dip"
+                android:gravity="top"
+                android:hint="问题及建议描述"
+                android:minLines="3"
+                android:textColor="#000000"
+                android:textColorHint="#bcbec0"
+                android:textSize="15dp" 
+                android:minHeight="100dp"
+                android:background="@drawable/bg_edittext"/>
+
+            <EditText
+                android:id="@+id/contact_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:paddingLeft="10dip"
+                android:paddingRight="10dip"
+                android:hint="电话/邮箱/QQ"
+                android:textColor="#000000"
+                android:textColorHint="#bcbec0"
+                android:textSize="15dp" 
+                android:minHeight="48dp"
+                android:background="@drawable/bg_edittext"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="20dip"
+                android:background="#ECEDED"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/addimage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="请选择图片"
+                    android:textColor="#000000"
+                    android:textSize="15dp" />
+
+                <RelativeLayout
+                    android:id="@+id/imageRl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#ECEDED"
+                    android:gravity="center_horizontal" >
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:padding="15dp"
+                        android:scaleType="fitStart" />
+
+                    <ImageView
+                        android:id="@+id/delete"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignRight="@+id/image"
+                        android:layout_alignTop="@+id/image"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/yonyou_ma_ico_delete" />
+                </RelativeLayout>
+            </LinearLayout>
+            
+            <RelativeLayout
+		        android:layout_width="fill_parent"
+		        android:layout_height="fill_parent" 
+		        android:visibility="gone">
+
+	            <View
+	                android:id="@+id/line"
+	                android:layout_width="match_parent"
+	                android:layout_height="1dp"
+	                android:layout_above="@+id/shake"
+	                android:layout_marginTop="20dp"
+	                android:background="#bcbec0"/>
+	
+	            <CheckBox
+	               	android:id="@+id/shake"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentBottom="true"
+		            android:layout_alignParentRight="true"
+		            android:layout_margin="10dp"
+		            android:gravity="center"
+		            android:text="  摇一摇快速反馈问题"
+		            android:button="@drawable/yonyou_ma_btn_check"
+		            android:textColor="#bcbec0"
+		            android:textSize="16sp" 
+		            android:checked="false"/>
+	           </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

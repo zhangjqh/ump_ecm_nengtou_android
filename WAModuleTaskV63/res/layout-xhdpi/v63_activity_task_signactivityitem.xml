@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+        android:paddingBottom="10dp"
+    android:orientation="vertical"
+    android:gravity="center_vertical" >
+    <!-- android:padding="@dimen/commonPadding" -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/deletebtnflag"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/oasche_delete44"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/deletebtnflag"
+            android:paddingLeft="20px" >
+
+            <TextView
+                android:id="@+id/activitynametext"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="活动A"
+                android:textSize="17sp"
+                android:singleLine="false"
+                android:textColor="@color/black" />
+
+        <wa.android.libs.btnFieldView.BtnFieldView
+            android:id="@+id/addactivitypanel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/addpersonbtn"
+            android:layout_toRightOf="@+id/activitynametext"
+            android:textColor="@android:color/black"
+            android:gravity="center_vertical"
+            android:visibility="gone" />
+        <EditText
+            android:id="@+id/addactivityedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/addpersonbtn"
+            android:layout_toRightOf="@+id/activitynametext"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/commonFontSizeMid"
+            android:hint="@string/selectreassigner" 
+            android:editable="false"/>
+            <Button
+                android:id="@+id/addpersonbtn"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/jumpbtn" />
+
+            <Button
+                android:id="@+id/deletebtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/delete"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/layout_calendarview_calendar_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="216dp"
+        android:background="#ffffffff" >
+
+        <com.yonyou.uap.um.control.calendar.ControllableScrollView
+            android:id="@+id/layout_calendarview_calendar_scrollpanel"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="22dp" >
+
+            <RelativeLayout
+                android:id="@+id/layout_calendarview_calendardetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </RelativeLayout>
+        </com.yonyou.uap.um.control.calendar.ControllableScrollView>
+    </RelativeLayout>
+
+     <LinearLayout
+        android:id="@+id/layout_calendarview_schedule_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffa5bdd8" 
+        android:orientation="vertical"/>
+
+</LinearLayout>

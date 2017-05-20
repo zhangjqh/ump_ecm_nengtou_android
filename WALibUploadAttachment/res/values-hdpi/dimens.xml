@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="commonPadding">12px</dimen>
+    <dimen name="commonFontSizeLarge">26px</dimen>
+    <dimen name="commonFontSizeMid">22px</dimen>
+    <dimen name="commonFontSizeLittle">20px</dimen>
+    <dimen name="commonTitleFontSize">30px</dimen>
+     <dimen name="commonGroupPadding">15dp</dimen>
+        <dimen name="drag_item_normal_height">48dip</dimen>
+    <dimen name="drag_item_expand_height">96dip</dimen>
+</resources>

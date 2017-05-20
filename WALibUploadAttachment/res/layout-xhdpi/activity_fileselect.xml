@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/nav" >
+
+        <TextView
+            android:id="@+id/filetileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:text="@string/fileselect"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
+		<Button
+		    android:id="@+id/backBtn"
+		    android:layout_width="64dp"
+		    android:layout_height="44dp"
+		    android:layout_alignParentLeft="true"
+		    android:layout_centerVertical="true"
+		    android:layout_marginLeft="5dp"
+		    android:background="@drawable/btn_back"
+		    android:textColor="@color/white" />
+
+    </RelativeLayout>
+<RelativeLayout
+        android:id="@+id/backText"
+        android:layout_width="fill_parent"
+        android:layout_height="100px"
+        android:layout_alignParentTop="true" >
+
+        <TextView
+            android:id="@+id/filetileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:layout_marginLeft="10dp"
+            android:text="返回上一级"
+            android:textSize="@dimen/commonTitleFontSize" />
+
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/noDataLayout"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/title" >
+
+    </ListView>
+</LinearLayout>

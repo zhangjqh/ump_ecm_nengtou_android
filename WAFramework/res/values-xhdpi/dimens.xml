@@ -1,0 +1,7 @@
+<resources>
+	<dimen name="commonPadding">18px</dimen>
+	<dimen name="commonFontSizeLarge">38px</dimen>
+	<dimen name="commonFontSizeMid">34px</dimen>
+    <dimen name="commonFontSizeLittle">30px</dimen>
+    <dimen name="commonTitleFontSize">40px</dimen>
+</resources>

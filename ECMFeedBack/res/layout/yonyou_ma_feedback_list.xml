@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ECEDED"
+    android:orientation="vertical" >
+
+    <include layout="@layout/yonyou_ma_title_left_right" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/line"
+            android:cacheColorHint="#00000000"
+            android:divider="#bcbec0"
+            android:dividerHeight="1dip"
+            android:fastScrollEnabled="true" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/emtip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:paddingBottom="30dp"
+            android:text="无历史反馈信息\n点击屏幕刷新"
+            android:textColor="#bcbec0"
+            android:textSize="15dp" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@+id/shake"
+            android:background="#bcbec0" 
+            android:visibility="gone"/>
+
+        <CheckBox
+            android:id="@+id/shake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="  摇一摇快速反馈问题"
+            android:button="@drawable/yonyou_ma_btn_check"
+            android:textColor="#bcbec0"
+            android:textSize="16sp" 
+            android:visibility="gone"
+            android:checked="false"/>
+    </RelativeLayout>
+
+</LinearLayout>

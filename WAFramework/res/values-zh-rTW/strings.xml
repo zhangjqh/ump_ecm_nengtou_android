@@ -1,0 +1,76 @@
+<resources>
+
+    <!-- Title -->
+    <string name="connectionSet">連接設置</string>
+    <string name="usernameIsNotNull">用戶名不能為空</string>
+    <string name="passwordIsNotNull">密碼不能為空</string>
+    <string name="usernameAndPasswordIsNotNull">用戶名、密碼不能為空</string>
+    <string name="login">登&#160;&#160;錄</string>
+    <string name="loginIng">登錄中...</string>
+    <string name="cancel">取消</string>
+    <string name="submit">確定</string>
+	<string name="atttopc">該文件較大，確認繼續下載？</string>
+    <!-- SetConnectionActivity -->
+    <string name="serverIP">移動伺服器</string>
+    <string name="error_input_empty">連接設置為空，不能保存！</string>
+    <!-- LoginActivity -->
+    <string name="username">用&#160;&#160;戶&#160;&#160;名</string>
+    <string name="password">密&#160;&#160;碼</string>
+    <string name="autoLogin">自動登錄</string>
+    <string name="tip">提示</string>
+    <string name="isModifyConnection">修改連接將重新登錄</string>
+    <string name="Login">登錄</string>
+    <string name="requestSuspendPleaseWait">請求掛起</string>
+    <string name="networkConnectionSet">網路連接設置</string>
+    <string name="isSetNetworkConnection">是否進行網路連接設置</string>
+    <string name="connectionsetting">設置連接</string>
+        <string name="selectEnterprice">選擇公司</string>
+    <string name="caution">錯誤提示</string>
+    <!-- settingActivity -->
+    <string name="setting">設置</string>
+    <string name="about">關於</string>
+    <string name="setConnection">設置連接</string>
+    <string name="logoutCurrentLogin">退出當前登錄</string>
+    <!-- Button -->
+    <string name="back">返回</string>
+    <!-- 網路錯誤提示 -->
+    <string name="currentUnusedNetwork">當前沒有可用網路</string>
+    <string name="serverSystemError">系統發生異常</string>
+    <string name="unknownError">未知錯誤</string>
+    <string name="networkUnavailable">當前網路不可用</string>
+    <string name="connectionTimeout">請求超時</string>
+    <string name="sessionTimeOutPleaseRelogin">session過期，請重新登錄</string>
+    <string name="notWaServerError">目標伺服器不是WA伺服器</string>
+    <string name="illegalServerAddressError">伺服器地址不合法</string>
+    <string name="illegalServerAddressOrAugumentError">伺服器地址或參數不合法</string>
+    <string name="fail_preLogin">預登錄失敗</string>
+    <string name="fail_Login">登錄失敗</string>
+    <string name="fail_login_withErrorRespons">登錄返回結果錯誤</string>
+    <string name="fail_fetchAccountSet">賬套獲取失敗</string>
+    <string name="choose_mail">選擇郵件用戶端</string>
+        <!-- listView -->
+	<string name="PullToRefresh">下拉刷新</string>
+	<string name="ReleaseToRefresh">釋放刷新</string>
+	<string name="LastRefresh">最後更新</string>
+	<string name="Refreshing">正在刷新</string>
+	<string name="Loading">正在載入</string>
+	<string name="ReleaseToLoad">釋放載入更多</string>
+	<string name="LatestData">已為最新資料</string>
+	<string name="ScrollUpToLoadMore">上拉載入更多</string>
+	<string name="ScrollUpToLoad">上拉載入</string>
+    <!-- 一些常用按鈕的多語資源 -->
+    <string name="attention">關注</string>
+    <string name="edit">編輯</string>
+    <string name="delete">刪除</string>
+    <string name="save">保存</string>
+    <string name="certain">確定</string>
+    <string name="loading">數據載入中...</string>
+    <string name="latest_data">已為最新資料.</string>
+    <string name="no_data">沒有更多資料</string>
+                <string name="nodataonpanel">當前頁面無數據</string>
+             <string name="cellphone">打手機</string>
+    <string name="telephone">打電話</string>
+    <string name="message">發短信</string>
+    <string name="email">發郵件</string>
+
+</resources>

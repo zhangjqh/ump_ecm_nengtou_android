@@ -1,0 +1,857 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="nc.bs.oa.oama.ntecm"
+    android:versionCode="13"
+    android:versionName="3.X.2" >
+   
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="17" />
+    
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+	<!-- 开机自启动 -->
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    
+<!--
+    <supports-screens
+        android:anyDensity="false"
+        android:xlargeScreens="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />-->
+
+    <application android:name="nc.bs.oa.oama.ntecm.ECMMobileApplication" android:allowBackup="true" android:icon="@drawable/app" android:label="@string/ECMoblie" android:theme="@style/AppTheme">
+
+		<!-- 基础 -->
+		<activity android:name="com.yonyou.uap.um.runtime.ExtraMapActivity">
+		</activity>
+		<activity android:name="com.yonyou.uap.um.activity.WelcomeActivity" android:screenOrientation="portrait" android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			<intent-filter>
+				<action android:name="com.yonyou.uap.um.activity.WelcomeActivity" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.yonyou.uap.um.control.UMCameraActivity">
+			<intent-filter>
+				<action android:name="com.yonyou.uap.um.control.UMCamera" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.yonyou.uap.um.control.UMMapActivity">
+			<intent-filter>
+				<action android:name="com.yonyou.uap.um.control.UMMap" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.yonyou.uap.um.control.UMTwoDCodeActivity">
+			<intent-filter>
+				<action android:name="com.yonyou.uap.um.control.UMTwoDCode" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 基础 -->
+
+		<!-- 问题反馈 -->
+		<activity android:name="nc.bs.oa.oama.ecm.feedback.FeedBackMainActivity" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.feedback.FeedBackMain" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="com.yonyou.ma.platform.modul.feedback.FeedbackListActivity" android:configChanges="orientation|keyboardHidden|screenSize" android:label="@string/appname" android:launchMode="singleTask"></activity>
+		<activity android:name="com.yonyou.ma.platform.modul.feedback.FeedbackSaveActivity" android:configChanges="orientation|keyboard|screenSize" android:label="@string/appname" android:launchMode="singleTask"></activity>
+		<activity android:name="com.yonyou.ma.platform.modul.feedback.FeedbackDetailActivity" android:configChanges="orientation|keyboard|screenSize" android:label="@string/appname" android:launchMode="singleTask"></activity>
+		<!-- 问题反馈 -->
+
+		<!-- 掌上协同 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_WelcomeExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Welcome" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_LoginExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Login" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_ConnectExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Connect" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_MainExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Main" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SetExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Set" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_AboutExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_About" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_DiscoveryExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Discovery" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_FlashExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Flash" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_MobilestoreExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Mobilestore" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_QrcodecontextExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Qrcodecontext" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Search" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchDeptExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_SearchDept" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchEGExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_SearchEG" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_SearchList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchOrgExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_SearchOrg" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchPGExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_SearchPG" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_PersonInfoExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_PersonInfo" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_SearchSelectedExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_SearchSelected" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_ServiceqrcodeExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Serviceqrcode" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Ecm_ShareappExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Ecm_Shareapp" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 掌上协同 -->
+
+		<!-- 通讯录 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_entGroupExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_entGroup" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_navChildrenExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_navChildren" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_navGroupExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_navGroup" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_nearlyCheckExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_nearlyCheck" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_pgPsnListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_pgPsnList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_psnDetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_psnDetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_psnGroupExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_psnGroup" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_pgAddPsnExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_pgAddPsn" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_psnListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_psnList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_psnUpdateGroupExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_psnUpdateGroup" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Addr_searchExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Addr_search" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 通讯录 -->
+
+		<!-- 发起协同 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_ArchiveEditExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_ArchiveEdit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_ArchiveScanExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_ArchiveScan" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_AttachmentEditExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_AttachmentEdit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_AttachmentListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_AttachmentList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_CommitDetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_CommitDetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_DefaultContentExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_DefaultContent" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_DraftDetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_DraftDetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_DraftEditExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_DraftEdit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_FlowEditExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_FlowEdit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_FlowHistoryExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_FlowHistory" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_FlowScanExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_FlowScan" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_ForwardExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_Forward" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_HandWriteExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_HandWrite" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_MainExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_Main" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_SentDetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_SentDetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_StepEditExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_StepEdit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_StepScanExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_StepScan" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_TemplateListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_TemplateList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Flow_WordContentExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Flow_WordContent" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 发起协同 -->
+
+		<!-- 协同日程 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_addschedulerExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_addscheduler" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_monthrefExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_monthref" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_myschedulerExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_myscheduler" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_myschedulerdetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_myschedulerdetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_onerepeatdayrefExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_onerepeatdayref" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_pushtimeExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_pushtime" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_remindrullrefExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_remindrullref" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_repeatdayrefExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_repeatdayref" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_repeatrullrefExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_repeatrullref" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_searchsharedExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_searchshared" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_sharedgrouopExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_sharedgrouop" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_shareschedulerExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_sharescheduler" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_shareschedulerdetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_shareschedulerdetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Scdu_timesetExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Scdu_timeset" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 协同日程 -->
+
+		<!-- 关键任务 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_attach_editExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_attach_edit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_detailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_detail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_editExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_edit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_fathertaskExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_fathertask" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_file_detailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_file_detail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_mainviewconfirmExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_mainviewconfirm" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_mainviewpsnExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_mainviewpsn" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_mainviewthreeforoneExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_mainviewthreeforone" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_mainviewtwoExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_mainviewtwo" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_personaltask_detailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_personaltask_detail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_personaltask_editExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_personaltask_edit" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_refsinglepersonExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_refsingleperson" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_refuseoragreeExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_refuseoragree" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_reportconfirmdetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_reportconfirmdetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_reporthistoryExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_reporthistory" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_reportwinExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_reportwin" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_responserefExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_responseref" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_responserefcopyExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_responserefcopy" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_starttask_detailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_starttask_detail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_taskstateExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_taskstate" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Task_urgewinExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Task_urgewin" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 关键任务 -->
+
+		<!-- 信息阅览 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_attach_listExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_attach_list" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_columninfosExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_columninfos" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_comment_listExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_comment_list" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_commentdetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_commentdetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_groupinfosExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_groupinfos" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_imgExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_img" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_urlExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_url" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_infosExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_infos" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_searchinfosExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_searchinfos" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_textExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_text" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Info_wordExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Info_word" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 信息阅览 -->
+
+		<!-- 消息看板 -->
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_AllReadMessageListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_AllReadMessageList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_AttachmentListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_AttachmentList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_MessageContentDetailExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_MessageContentDetail" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_ReadMessageListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_ReadMessageList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_SendMessageExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_SendMessage" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_UnreadMessageListExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_UnreadMessageList" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="nc.bs.oa.oama.ntecm.Msg_AttachmentList4ViewExtendActivity" android:windowSoftInputMode="stateHidden" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="nc.bs.oa.oama.ecm.Msg_AttachmentList4View" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 消息看板 -->
+
+		<!-- 移动审批 -->
+		<activity android:name="wa.android.task.activity.TaskEnterActivity" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="wa.android.task.activity.TaskEnter" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="wa.android.task.activity.V63TaskGroupActivity" android:screenOrientation="portrait">
+			<intent-filter>
+				<action android:name="wa.android.task.activity.V63TaskGroup" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<activity android:name="wa.android.libs.clickFillScreen.FillScreenActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.TaskMainActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.TaskDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.ApprovalActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.TaskChildDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.ApprovalHistoryActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.ApproveDetailPersonActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.TaskAttachmentDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.ApprovalAddPersonActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateUnchanged"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskActionDetail" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskAttachmentListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskSignPersonListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskSignActivityListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskNoteListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63ApprovalAddPersonActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateUnchanged"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskReaderListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskLauchListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63ApprovalHistoryActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskHandWriteActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63PicMainBodyDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TextMainBodyDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63WordMainBodyDetailActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskPersonDragListActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.common.activity.V57LoginActivity" android:clearTaskOnLaunch="true" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.uploadattachment.activity.WAAttahcmentUploadActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.uploadattachment.activity.WAFileSelectActivity" android:screenOrientation="portrait"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskCopyToPersonActivity" android:screenOrientation="portrait" android:windowSoftInputMode="stateUnchanged"></activity>
+		<activity android:name="wa.android.task.activity.V63TaskTextContentActivity" android:screenOrientation="portrait"></activity>
+		<!-- 移动审批 -->
+		<!-- 电话会议 -->
+		<activity android:name="nc.bs.oa.oama.tpm.LunchMeetingExtendActivity" android:screenOrientation="portrait">
+		    <intent-filter>
+				<action android:name="nc.bs.oa.oama.tpm.LunchMeeting" />
+				<category android:name="android.intent.category.DEFAULT" />
+			</intent-filter>
+		</activity>
+		<!-- 电话会议 -->
+		<!-- 推送设置-->
+        <service android:name="com.android.email.ACCOUNT_INTENT"></service>    
+        <service
+            android:name="nc.bs.oa.oama.push.ECMPushService"
+            android:enabled="true"
+            android:label="push" >
+            <intent-filter>
+                <action android:name="nc.bs.oa.oama.push.PUSH_LISTENSERVICE" />
+            </intent-filter>
+        </service>
+        <!-- 中转界面 -->
+        <activity android:name="nc.bs.oa.oama.push.NotificationActivityImple"
+             android:screenOrientation="portrait" 
+             android:exported="true"
+             android:launchMode="singleTask">
+        </activity>     
+        <!--  android:launchMode="singleTask"
+        	android:taskAffinity=""
+        	android:excludeFromRecents="true" -->     
+		<!--1._end  -->    
+		<!--Push 2._SDK所需的android服务  -->        
+		<service android:name="com.android.email.ACCOUNT_INTENT"></service>       
+		<!--2._end  -->       
+		<!--Push 3._ SDK消息推送服务(核心服务) -->   	   
+		<service android:name="com.yonyou.pushclient.NotificationPushService">        	
+			<intent-filter >            	
+			<action android:name="nc.bs.oa.oama.ecm.NOTIFICATION_PUSH_SERVICE"/>      
+			</intent-filter>   	   
+		</service>   	 	    
+		<!--Push 4._应用程序在控制台注册时的app_id值  -->              
+		<meta-data android:name="APP_ID" android:value="180"/>       
+		<!--4._end  -->
+		
+		<receiver android:name="nc.bs.oa.oama.push.BootBroadcastReceiver" >
+		    <intent-filter >
+		        <action android:name="android.intent.action.BOOT_COMPLETED"></action>  
+                <category android:name="android.intent.category.HOME" />  
+		    </intent-filter>
+		</receiver>
+		<activity android:name="nc.bs.oa.oama.push.AlertNotifyActivity" 
+		    android:screenOrientation="portrait"
+		    android:theme="@style/Alert_notify_Theme">
+		    <intent-filter >
+		        <action android:name="nc.bs.oa.oama.push.AlertNotify"/>
+		        <category android:name="android.intent.category.DEFAULT"/>
+		    </intent-filter>
+		</activity>
+         <!-- 推送设置-->
+
+		<!-- push setting
+                <receiver android:name="com.yonyou.uap.um.push.BootBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name="com.yonyou.uap.um.push.SpiritNotificationService"
+            android:enabled="true"
+            android:label="push" >
+            <intent-filter>
+                <action android:name="com.yonyou.uap.um.push.SpiritNotificationService" />
+            </intent-filter>
+        </service>
+                push setting end -->
+		<meta-data android:name="uaplauncher" android:value="nc.bs.oa.oama.ecm.Ecm_Flash" />
+		<meta-data android:name="useuapwelcome" android:value="false" />
+		<meta-data android:name="autocheckupdate" android:value="false" />
+		<!-- application configure metadata -->
+		<meta-data android:name="push_server_mang" android:value="http://xiaoxi.yonyou.com:80/manage/proxyservice" />
+		<meta-data android:name="push_companypwd" android:value="e10adc3949ba59abbe56e057f20f883e" />
+		<meta-data android:name="push_appid" android:value="227bed74-4f93-4b20-b74b-1a0b22c7bf1a" />
+		<meta-data android:name="push_companyid" android:value="7c623740-36ae-4e21-b87d-2875d9ead18f" />
+		<meta-data android:name="mapkey" android:value="" />
+		<meta-data android:name="push_server_msg" android:value="http://xiaoxi.yonyou.com:8080/manage/proxyservice" />
+	</application>
+</manifest>

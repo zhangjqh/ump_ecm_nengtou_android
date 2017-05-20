@@ -1,0 +1,52 @@
+package wa.android.oaas;
+
+/**
+ * Created by 夏森海
+ * 16/8/4
+ */
+
+public interface OAASDefine {
+    int MESSAGE_REPLY = 80800;
+
+    int CREATE_WORD = 80810;
+    int CREATE_EXCEL = 80811;
+    int CREATE_POWERPOINT = 80812;
+
+    int OPEN_WORD_FROM_SERVER = 80820;
+    int OPEN_EXCEL_FROM_SERVER = 80821;
+    int OPEN_POWERPOINT_FROM_SERVER = 80822;
+    int OPEN_PDF_FROM_SERVER = 80823;
+    int OPEN_IMAGE_FROM_SERVER = 80824;
+
+    int OPEN_WORD_FROM_LOCAL = 80830;
+    int OPEN_EXCEL_FROM_LOCAL = 80831;
+    int OPEN_POWERPOINT_FROM_LOCAL = 80832;
+    int OPEN_PDF_FROM_LOCAL = 80833;
+    int OPEN_IMAGE_FROM_LOCAL = 80834;
+
+    int EVT_DOWNLOAD_PROGRESS = 90901;
+    int EVT_OPEN_DOCUMENT_START = 90902;
+    int EVT_OPEN_DOCUMENT_FAILED = 90903;
+    int EVT_DOCUMENT_OPENED = 90904;
+    int EVT_DOCUMENT_CLOSED = 90905;
+    int EVT_DOC_SVC_ATTACHED = 90906;
+    int EVT_DOC_SVC_DETACHED = 90907;
+    int EVT_UPLOAD_START = 90908;
+    int EVT_UPLOAD_FAILED = 90909;
+    int EVT_UPLOAD_SUCCEED = 909010;
+    int EVT_DOWNLOAD_START = 909011;
+    int EVT_DOWNLOAD_FAILED = 909012;
+    int EVT_DOWNLOAD_SUCCEED = 909013;
+
+    enum DocInView {
+        NORMAL,
+        HAND_SIGNATURE,
+        READ,
+        READONLY
+    }
+
+
+    enum PDFInView {
+        READ, EDIT
+    }
+}

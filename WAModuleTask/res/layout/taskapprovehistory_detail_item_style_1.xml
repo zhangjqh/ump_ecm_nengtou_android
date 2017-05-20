@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 这个是针对审批历史中的提交人做的样式 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="44dp"
+    android:gravity="center_vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp" >
+
+    <TextView
+        android:id="@+id/taskasd_itemstyle1_nameTextView"
+        android:layout_width="85dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical|left"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/taskasd_itemstyle1_arrowImageView"
+        android:layout_width="8dp"
+        android:layout_height="13dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="15.5dp"
+        android:layout_marginBottom="15.5dp"
+        android:src="@drawable/wadetail_row_array" />
+
+    <TextView
+        android:id="@+id/taskasd_itemstyle1_dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_toLeftOf="@id/taskasd_itemstyle1_arrowImageView"
+        android:layout_toRightOf="@id/taskasd_itemstyle1_nameTextView"
+        android:gravity="center_vertical|right"
+        android:layout_marginRight="8dp"
+        android:textSize="16sp" />
+
+</RelativeLayout>

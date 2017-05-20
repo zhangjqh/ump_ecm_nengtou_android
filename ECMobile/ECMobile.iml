@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="android" name="Android">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/gen" isTestSource="false" generated="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/res" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/anim" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-hdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-ldpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-mdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-xhdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-zh-rCN-hdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-zh-rCN-xhdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-zh-rTW-hdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/drawable-zh-rTW-xhdpi" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/layout" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/values" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/values-en" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/values-ja" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/values-zh-rCN" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/values-zh-rHK" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/res/values-zh-rTW" type="java-resource" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="walibpiccompress" level="project" />
+    <orderEntry type="library" exported="" name="libs3" level="project" />
+    <orderEntry type="library" exported="" name="libs1" level="project" />
+    <orderEntry type="library" exported="" name="waframework" level="project" />
+    <orderEntry type="library" exported="" name="libs" level="project" />
+    <orderEntry type="library" exported="" name="ecmpush" level="project" />
+    <orderEntry type="module" module-name="WALibPiccompress" exported="" />
+    <orderEntry type="module" module-name="WAFramework" exported="" />
+    <orderEntry type="module" module-name="ECMPush" exported="" />
+    <orderEntry type="module" module-name="ECMFeedBack" exported="" />
+    <orderEntry type="module" module-name="WAModuleTaskV63" exported="" />
+  </component>
+</module>

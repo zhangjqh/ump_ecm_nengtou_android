@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Title -->
+    <string name="connectionSet">Connection Settings</string>
+    <string name="usernameIsNotNull">User Name Cannot be blank.</string>
+    <string name="passwordIsNotNull">Password Cannot be blank.</string>
+    <string name="usernameAndPasswordIsNotNull">User Name and Password Cannot be blank.</string>
+    <string name="login">Login</string>
+    <string name="loginIng">Logging in…</string>
+    <string name="cancel">Cancel</string>
+    <string name="submit">OK</string>
+    <string name="atttopc">This file is too large.Go on?</string>
+    <!-- SetConnectionActivity -->
+    <string name="serverIP">Mobile Server</string>
+    <string name="port">Port</string>
+    <string name="error_input_empty">The connection setting is empty. Cannot save. </string>
+    <!-- LoginActivity -->
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="autoLogin">Auto Login</string>
+    <string name="tip">Prompt</string>
+    <string name="isModifyConnection">Modifying the connection will log in again.</string>
+    <string name="connectionsetting">Connection Settings</string>
+    <string name="Login">Login</string>
+
+    <!-- settingActivity -->
+    <string name="setting">Set</string>
+    <string name="about">About</string>
+    <string name="setConnection">Modify Connection</string>
+    <string name="logoutCurrentLogin">Exit Current Login</string>
+    <!-- Button -->
+    <string name="back">Return</string>
+    <!-- 网络错误提示 -->
+    <string name="unknownError">Unknown exception.</string>
+    <string name="networkUnavailable">Network Unavailable</string>
+    <string name="connectionTimeout">Request timeout.</string>
+    <string name="notWaServerError">目标服务器不是WA服务器</string>
+    <string name="illegalServerAddressError">服务器地址不合法</string>
+    <string name="illegalServerAddressOrAugumentError">服务器地址或参数不合法</string>
+    <string name="fail_preLogin">预登录失败</string>
+    <string name="fail_Login">登录失败</string>
+    <string name="fail_login_withErrorRespons">登录返回结果错误</string>
+    <string name="choose_mail">选择邮件客户端</string>
+    <!-- listView -->
+    <string name="PullToRefresh">Scroll down to refresh</string>
+    <string name="ReleaseToRefresh">Release Refreshing</string>
+    <string name="LastRefresh">Last Update</string>
+    <string name="Refreshing">Refreshing</string>
+    <string name="Loading">Loading</string>
+    <string name="ReleaseToLoad">Release Refreshing</string>
+    <string name="LatestData">The data are already the latest</string>
+    <string name="ScrollUpToLoadMore">Scroll up to load more</string>
+    <string name="ScrollUpToLoad">Scroll Up to Load</string>
+    <!-- 一些常用按钮的多语资源 -->
+    <string name="attention">Follow</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="certain">Certain</string>
+    <string name="loading">Loading data…</string>
+    <string name="latest_data">The data are already the latest.</string>
+    <string name="no_data">No more data.</string>
+    <string name="nodataonpanel">There‘s no data.</string>
+    <string name="cellphone">Cellphone</string>
+    <string name="telephone">Telephone</string>
+    <string name="message">Message</string>
+    <string name="email">Email</string>
+    <string name="title_activity_fill_screen">FillScreenActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>

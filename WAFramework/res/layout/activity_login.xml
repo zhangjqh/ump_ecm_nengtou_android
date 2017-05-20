@@ -1,0 +1,117 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/base_background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/apploginImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp" />
+
+    <LinearLayout
+        android:id="@+id/loginpanel"
+        android:layout_width="296dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/loginedit_bg"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/login_usernameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="18sp"
+            android:layout_marginRight="18sp"
+            android:background="#00000000"
+            android:ems="10"
+            android:hint="@string/username"
+            android:singleLine="true"
+            android:textSize="18sp"
+             android:textColor="@color/darkblue"  />
+
+        <EditText
+            android:id="@+id/login_passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="18sp"
+            android:layout_marginRight="18sp"
+            android:layout_marginTop="2dp"
+            android:background="#00000000"
+            android:ems="10"
+            android:hint="@string/password"
+            android:password="true"
+            android:singleLine="true"
+            android:textSize="18sp" 
+             android:textColor="@color/darkblue" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_loginBtn"
+        android:layout_width="296dp"
+        android:layout_height="43dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:background="@drawable/login_button"
+        android:gravity="center"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:id="@+id/login_rest"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="15dp" >
+
+        <Button
+            android:id="@+id/login_setconnectionBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/connectionsetting"
+            android:gravity="center"
+            android:padding="4dp"
+            android:singleLine="true"
+            android:text="@string/connectionSet"
+            android:textColor="@color/common_button_text"
+            android:textSize="13sp" />
+
+        <CheckBox
+            android:id="@+id/login_autoLogin_checkBox"
+            style="@style/mycheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/AutoLoginText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/login_autoLogin_checkBox"
+            android:layout_alignBottom="@+id/login_autoLogin_checkBox"
+            android:layout_marginLeft="8dp"
+            android:layout_toRightOf="@+id/login_autoLogin_checkBox"
+            android:text="@string/autoLogin"
+            android:textColor="@color/white" />
+        <TextView
+        android:id="@+id/login_errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="8px"
+        android:text=""
+        android:textColor="#FF0000"
+        android:textSize="28px" />
+    </LinearLayout>
+
+</LinearLayout>

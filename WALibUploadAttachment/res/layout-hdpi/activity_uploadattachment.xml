@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+<RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/nav" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:clickable="false"
+            android:text="@string/uploadfile"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+                <Button
+            android:id="@+id/uoload_editBtn"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/jumpbtn"
+            android:textSize="27px"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/finishBtn"
+            android:layout_width="64dp"
+            android:layout_height="44dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/btn_back"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/red" 
+            android:textSize="17sp"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/noDataLayout"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/title" >
+
+    </ListView>
+</LinearLayout>

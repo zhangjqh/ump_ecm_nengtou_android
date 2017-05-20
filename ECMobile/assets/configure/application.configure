@@ -1,0 +1,8 @@
+applicationid=A0A000.nc.yonyou.com
+mapkey=
+push_server_msg=http://xiaoxi.yonyou.com:8080/manage/proxyservice
+push_companyid=7c623740-36ae-4e21-b87d-2875d9ead18f
+push_server_mang=http://xiaoxi.yonyou.com:80/manage/proxyservice
+tp=des_gzip
+push_appid=227bed74-4f93-4b20-b74b-1a0b22c7bf1a
+push_companypwd=e10adc3949ba59abbe56e057f20f883e

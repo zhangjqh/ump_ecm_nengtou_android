@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="@color/common_bg" >
+	<include
+	    layout="@layout/title_panel" />
+    <TextView
+        android:id="@+id/taskapprovehistroy_titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:textSize="16sp" />
+    <TextView
+         android:id="@+id/taskapprovehistroy_title_separator"
+        android:layout_width="match_parent"
+        android:layout_height="4px" />
+	<ScrollView
+	    android:id="@+id/taskapprovehistory_detailScrollView"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	</ScrollView>
+        
+
+</LinearLayout>

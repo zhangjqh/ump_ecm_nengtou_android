@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="left"
+    android:background="@color/common_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_panel" />
+
+    <wa.android.libs.btngroupview.WAButtonGroupView
+        android:id="@+id/taskMain_buttonGroupView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <wa.android.libs.extlistview.WAEXLoadListView
+        android:id="@+id/taskMain_taskListExListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:cacheColorHint="#00000000"
+        android:groupIndicator="@null"
+        android:listSelector="@null" 
+        android:divider="@null"/>
+
+    
+    <LinearLayout
+        android:id="@+id/taskMain_nodataPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        android:paddingTop="20dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/nodata" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/common_bg_bottom"
+        android:gravity="right" >
+
+        <Button
+            android:id="@+id/msgmain_setBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bottom_set" />
+    </LinearLayout>
+
+</LinearLayout>

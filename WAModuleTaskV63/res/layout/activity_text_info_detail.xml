@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- 标题栏 -->
+    <include
+        android:id="@+id/infodetail_title_buttonPannel"
+        layout="@layout/title_panel"/> 
+
+    <!-- 正文 -->
+	<!-- 主题 -->
+    <TextView
+        android:id="@+id/infodetail_infotitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="9.0dp"
+        android:layout_marginTop="11.5dp"
+        android:gravity="center_vertical|left"
+        android:text="用友UAP平台实现高效敏捷开发"
+        android:textColor="#000000"
+        android:textSize="22.5dp"
+        android:singleLine="true"
+        android:layout_below="@+id/infodetail_title_buttonPannel" />
+	<!-- 日期 -->
+    <TextView
+        android:id="@+id/infodetail_publishdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/infodetail_infotitle"
+        android:layout_marginLeft="9.0dp"
+        android:layout_marginTop="7.0dp"
+        android:gravity="center_vertical|left"
+        android:text="2013-02-05 14:28"
+        android:textColor="#6D6D6D"
+        android:textSize="15.0dp" />
+	
+    <!-- 横线 -->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/infodetail_publishdate"
+        android:layout_marginLeft="6.0dp"
+        android:layout_marginRight="6.0dp"
+        android:layout_marginTop="5.0dp"
+        android:background="#B4B4B4" />
+    
+	
+    <RelativeLayout
+        android:id="@+id/infodetail_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="10.0dp"
+        android:layout_marginBottom="85.0dp"
+        android:layout_below="@id/textView4"/>
+
+
+
+</RelativeLayout>

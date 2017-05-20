@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/feedback_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:gravity="center"
+        android:text="问题反馈" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="center"
+        android:text="更新升级" />
+
+    <Button
+        android:id="@+id/analytics_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="@dimen/button_height"
+        android:layout_marginTop="@dimen/margin_top"
+        android:gravity="center"
+        android:text="数据统计" />
+
+</LinearLayout>

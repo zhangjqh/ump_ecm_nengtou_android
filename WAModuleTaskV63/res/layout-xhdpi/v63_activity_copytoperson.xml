@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/common_bg" >
+    <include 
+        android:id="@+id/taskApproval_title_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       	layout="@layout/title_panel" />
+    <RelativeLayout
+        android:id="@+id/taskApproval_peopleChoose_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/commonPadding"
+        android:paddingRight="@dimen/commonPadding"
+        >
+
+        <RelativeLayout
+            android:id="@+id/addPerson_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/taskApproval_addPersonImageButton" />
+
+        <ImageButton
+            android:id="@+id/taskApproval_addPersonImageButton"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/jumpbtn" />
+
+        <TextView
+            android:id="@+id/taskApproval_toWhomTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addPerson_name"
+            android:layout_alignLeft="@+id/addPerson_name"
+            android:layout_alignParentTop="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/commonFontSizeLarge" />
+                <LinearLayout
+            android:id="@+id/taskApproval_people_panel"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/taskApproval_addPersonImageButton"
+            android:layout_toRightOf="@id/taskApproval_toWhomTextView" >
+        </LinearLayout>
+        
+
+    </RelativeLayout>
+</LinearLayout>

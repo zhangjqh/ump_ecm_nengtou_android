@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ECEDED"
+    android:orientation="vertical" >
+
+    <include layout="@layout/yonyou_ma_title_left_right" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/bottom"
+            android:cacheColorHint="#00000000"
+            android:clickable="false"
+            android:divider="#bcbec0"
+            android:dividerHeight="0dip"
+            android:fastScrollEnabled="true"
+            android:listSelector="@android:color/transparent" >
+        </ListView>
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="1dp" >
+
+            <TextView
+                android:id="@+id/image"
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/select_picture" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/send"
+                android:layout_toRightOf="@+id/image"
+                android:paddingLeft="5dip"
+                android:paddingRight="5dip"
+                android:hint="请输入内容"
+                android:maxLines="5"
+                android:minHeight="48dp"
+                android:textColor="#000000"
+                android:textColorHint="#bcbec0"
+                android:textSize="15dp"
+                android:background="@drawable/bg_edittext" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/send"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/yonyou_ma_btn_send"
+                android:gravity="center"
+                android:text="发送" >
+            </TextView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

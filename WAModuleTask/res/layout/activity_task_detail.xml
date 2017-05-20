@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical" >
+
+    <include layout="@layout/title_panel" />
+
+    <RelativeLayout
+        android:id="@+id/taskDetail_taskTitle_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/commonPadding" >
+
+        <TextView
+            android:id="@+id/taskDetail_taskTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/taskDetail_taskHistoryBtn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/commonFontSizeLarge" />
+
+        <Button
+            android:id="@+id/taskDetail_taskHistoryBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/commonPadding"
+            android:background="@drawable/task_historybtn" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/taskDetail_lineImageView"
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:background="@drawable/wadetail_title_separator" />
+
+    <ScrollView
+        android:id="@+id/taskDetail_content_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/commonPadding"
+        android:paddingBottom="@dimen/commonPadding" >
+
+    </ScrollView>
+</LinearLayout>
