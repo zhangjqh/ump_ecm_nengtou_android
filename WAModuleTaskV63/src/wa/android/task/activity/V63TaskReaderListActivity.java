@@ -65,7 +65,7 @@ public class V63TaskReaderListActivity extends BaseActivity implements OnActionL
 	private String currentStatusCode = "";
 	private String currentStatusKey = "mypieces";// 默认参数，没有用
 	private int currentStartLine = 1;
-	private int pageSize = 25;
+	private int pageSize = CommonWAPreferences.WA_UNHANDLED_QUERY_COUNT;
 	private int count = 0;
 
 	private List<TaskBtnVO> taskBtnList;

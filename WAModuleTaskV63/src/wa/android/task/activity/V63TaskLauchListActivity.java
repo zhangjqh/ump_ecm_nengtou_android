@@ -64,7 +64,7 @@ public class V63TaskLauchListActivity extends BaseActivity implements OnActionLi
 	private String currentStatusCode = "";
 	private String currentStatusKey = "submit";// 默认参数，没有用
 	private int currentStartLine = 1;
-	private int pageSize = 25;
+	private int pageSize = CommonWAPreferences.WA_UNHANDLED_QUERY_COUNT;
 	private int count = 0;
 	private String firststatus = "";
 	private List<TaskBtnVO> taskBtnList;

@@ -34,4 +34,7 @@ public class CommonWAPreferences {
 	
 	//变量命名方式为 +"module name_"+"key description",全大写，公共KEY无需module name
 	//变量值同变量名
+	
+	//待办分页每页条数
+	public static final int WA_UNHANDLED_QUERY_COUNT = 100;
 }
