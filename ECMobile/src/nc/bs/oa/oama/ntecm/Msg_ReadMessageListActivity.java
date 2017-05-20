@@ -53,6 +53,11 @@ protected UMLabel listview0_childWgt0_datetime = null;
 protected XHorizontalLayout listview0_childWgt0_panel3 = null;
 protected UMImage listview0_childWgt0_image0 = null;
 
+//列表界面，邮件标题字段panel6
+protected XHorizontalLayout listview0_childWgt0_panel6 = null;
+//列表界面，邮件标题字段label
+protected UMLabel listview0_childWgt0_msgtitle = null;
+
 	
 	protected final static int ID_MSG_READMESSAGELIST = 972641633;
 protected final static int ID_VIEWPAGE0 = 2147463376;
@@ -83,6 +88,11 @@ protected final static int ID_LISTVIEW0_CHILDWGT0_PANEL8 = 1807335920;
 protected final static int ID_LISTVIEW0_CHILDWGT0_DATETIME = 1793255474;
 protected final static int ID_LISTVIEW0_CHILDWGT0_PANEL3 = 1159129718;
 protected final static int ID_LISTVIEW0_CHILDWGT0_IMAGE0 = 1771424536;
+
+//列表界面，邮件标题字段panel6
+protected final static int ID_LISTVIEW0_CHILDWGT0_PANEL6 = 2019332681;
+//列表界面，邮件标题字段label
+protected final static int ID_LISTVIEW0_CHILDWGT0_MSGTITLE = 1331861129;
 
 	
 	
@@ -206,6 +216,9 @@ this.setContentView(currentPage);
   idmap.put("listview0_childWgt0_datetime",ID_LISTVIEW0_CHILDWGT0_DATETIME);
   idmap.put("listview0_childWgt0_panel3",ID_LISTVIEW0_CHILDWGT0_PANEL3);
   idmap.put("listview0_childWgt0_image0",ID_LISTVIEW0_CHILDWGT0_IMAGE0);
+  
+  idmap.put("listview0_childWgt0_panel6",ID_LISTVIEW0_CHILDWGT0_PANEL6);
+  idmap.put("listview0_childWgt0_msgtitle",ID_LISTVIEW0_CHILDWGT0_MSGTITLE);
 
 	}
 	
@@ -507,6 +520,33 @@ listview0_childWgt0_panel4.addView(listview0_childWgt0_panel21);
 
 return listview0_childWgt0_panel4;
 }
+public View getListview0_childWgt0_panel6View(UMActivity context,
+		IBinderGroup binderGroup, UMDslConfigure configure) {
+	// TODO Auto-generated method stub
+	listview0_childWgt0_panel6 = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context), ID_LISTVIEW0_CHILDWGT0_PANEL6
+			,"height","20"
+			,"layout-type","linear"
+			,"width","fill"
+			,"valign","center"
+			);
+	listview0_childWgt0_msgtitle = (UMLabel)ThirdControl.createControl(new UMLabel(context),ID_LISTVIEW0_CHILDWGT0_MSGTITLE
+			,"content","msgtitle"
+			,"bindfield","msgtitle"
+			,"halign","left"
+			,"height","20.0"
+			,"color","#000000"
+			,"layout-type","linear"
+			,"font-size","13"
+			,"width","fill"
+			,"font-family","default"
+			);
+			UMTextBinder listview0_childWgt0_msgtitle_binder = new UMTextBinder((IUMContextAccessor)context);
+			listview0_childWgt0_msgtitle_binder.setBindInfo(new BindInfo("msgtitle"));
+			listview0_childWgt0_msgtitle_binder.setControl(listview0_childWgt0_msgtitle);
+			binderGroup.addBinderToGroup(ID_LISTVIEW0_CHILDWGT0_MSGTITLE, listview0_childWgt0_msgtitle_binder);
+			listview0_childWgt0_panel6.addView(listview0_childWgt0_msgtitle);
+	return listview0_childWgt0_panel6;
+}
 public View getListview0_childWgt0_panel19View(final UMActivity context,IBinderGroup binderGroup, UMDslConfigure configure) {
 listview0_childWgt0_panel19 = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_LISTVIEW0_CHILDWGT0_PANEL19
 ,"height","23"
@@ -592,7 +632,7 @@ listview0_childWgt0_panel2 = (XVerticalLayout)ThirdControl.createControl(new XVe
 ,"padding-left","15"
 ,"margin-right","5"
 ,"halign","center"
-,"height","70"
+,"height","90"//高度70变90
 ,"weight","1"
 ,"layout-type","linear"
 ,"width","0"
@@ -600,11 +640,15 @@ listview0_childWgt0_panel2 = (XVerticalLayout)ThirdControl.createControl(new XVe
 );
 View listview0_childWgt0_panel4 = (View) getListview0_childWgt0_panel4View((UMActivity)context,binderGroup,configure);
 listview0_childWgt0_panel2.addView(listview0_childWgt0_panel4);
+View listview0_childWgt0_panel6 = (View) getListview0_childWgt0_panel6View((UMActivity)context,binderGroup,configure);
+listview0_childWgt0_panel2.addView(listview0_childWgt0_panel6);
 View listview0_childWgt0_panel5 = (View) getListview0_childWgt0_panel5View((UMActivity)context,binderGroup,configure);
 listview0_childWgt0_panel2.addView(listview0_childWgt0_panel5);
 
 return listview0_childWgt0_panel2;
 }
+
+
 public View getListview0_childWgt0_panel3View(final UMActivity context,IBinderGroup binderGroup, UMDslConfigure configure) {
 listview0_childWgt0_panel3 = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_LISTVIEW0_CHILDWGT0_PANEL3
 ,"margin-right","15"
@@ -627,7 +671,7 @@ return listview0_childWgt0_panel3;
 public View getListview0_childWgt0_panel1View(final UMActivity context,IBinderGroup binderGroup, UMDslConfigure configure) {
 listview0_childWgt0_panel1 = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_LISTVIEW0_CHILDWGT0_PANEL1
 ,"padding-top","8"
-,"height","70"
+,"height","90"//高度70变90
 ,"layout-type","linear"
 ,"width","fill"
 ,"valign","center"
@@ -643,7 +687,7 @@ return listview0_childWgt0_panel1;
 }
 public View getListview0_childWgt0View(final UMActivity context,IBinderGroup binderGroup, UMDslConfigure configure) {
 listview0_childWgt0 = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_LISTVIEW0_CHILDWGT0
-,"height","70"
+,"height","90"//高度70变90
 ,"layout-type","linear"
 ,"background","#FFFFE0"
 ,"width","fill"
