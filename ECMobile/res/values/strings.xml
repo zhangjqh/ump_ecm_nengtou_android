@@ -431,6 +431,8 @@
     <string name="msg_InputMsgTitle">"输入标题内容"</string>
     <string name="msg_IsNullContentOrAttach">"消息内容或附件不能同时为空."</string>
     <string name="msg_Return">"Back"</string>
+     <string name="msg_Reply">"回复"</string>
+    <string name="msg_Transfer">"转发"</string>
     <string name="msg_AttachList">"附件列表"</string>
     <string name="A0A007">"Approve"</string>
     <string name="addr_label_about">"关于"</string>

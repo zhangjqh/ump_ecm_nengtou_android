@@ -58,6 +58,14 @@ protected UMLabel label_msgtitle_title = null;
 //标题字段值
 protected UMLabel label_msgtitle = null;
 
+//回复转发按钮组
+protected XHorizontalLayout panel_buttongroup = null;
+//回复按钮
+protected UMButton button_reply = null;
+//转发按钮
+protected UMButton button_transfer = null;
+
+
 
 	
 	protected final static int ID_MSG_MESSAGECONTENTDETAIL = 1652453130;
@@ -92,6 +100,9 @@ protected final static int ID_PANEL_MSGTITLE = 115984779;
 protected final static int ID_LABEL_MSGTITLE_TITLE = 294063608;
 protected final static int ID_LABEL_MSGTITLE = 294063609;
 
+protected final static int ID_PANEL_BUTTONGROUP = 115984771;
+protected final static int ID_BUTTON_REPLY = 294063601;
+protected final static int ID_BUTTON_TRANSFER = 294063602;
 	
 	
 	@Override
@@ -216,7 +227,11 @@ this.setContentView(currentPage);
   
   idmap.put("panel_msgtitle", ID_PANEL_MSGTITLE);
   idmap.put("label_msgtitle_title", ID_LABEL_MSGTITLE_TITLE);
-  idmap.put("label_mssgtitle", ID_LABEL_MSGTITLE);
+  idmap.put("label_msgtitle", ID_LABEL_MSGTITLE);
+  
+  idmap.put("panel_buttongroup",ID_PANEL_BUTTONGROUP);
+  idmap.put("button_reply", ID_BUTTON_REPLY);
+  idmap.put("button_transfer", ID_BUTTON_TRANSFER);
 
 	}
 	
@@ -604,11 +619,12 @@ panel7 = (XVerticalLayout)ThirdControl.createControl(new XVerticalLayout(context
 ,"padding-right","5"
 ,"padding-left","15"
 ,"halign","left"
-,"height","fill"
+,"height","0"
+,"weight","1"
 ,"layout-type","linear"
 ,"background","#ffffff"
 ,"width","fill"
-,"margin-bottom","15"
+,"margin-bottom","0"
 );
 label10 = (UMLabel)ThirdControl.createControl(new UMLabel(context),ID_LABEL10
 ,"bindfield","content"
@@ -656,9 +672,81 @@ View panel6 = (View) getPanel6View((UMActivity)context,binderGroup,configure);
 panel1.addView(panel6);
 View panel7 = (View) getPanel7View((UMActivity)context,binderGroup,configure);
 panel1.addView(panel7);
-
+View panel_buttongroup = (View) getPanelButtonGroupView((UMActivity)context,binderGroup,configure);
+panel1.addView(panel_buttongroup);
 return panel1;
 }
+public View getPanelButtonGroupView(UMActivity context,
+		IBinderGroup binderGroup, UMDslConfigure configure) {
+	panel_buttongroup = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_PANEL_BUTTONGROUP
+			,"padding-right","15"
+			,"padding-left","15"
+			,"halign","left"
+			,"valign","center"
+			,"height","44"
+			,"weight","0"
+			,"layout-type","linear"
+			,"background","#ffffff"
+			,"width","fill"
+			,"margin-bottom","0"
+			,"margin-top","5"
+			);
+	
+	button_reply = (UMButton)ThirdControl.createControl(new UMButton(context),ID_BUTTON_REPLY
+			,"padding-left","35"
+			,"halign","left"
+//			,"pressed-image","btn_back_touch"
+			,"width","64"
+			,"font-pressed-color","#f2adb2"
+			,"height","44"
+			,"weight","1"
+			,"color","#e50011"
+			,"layout-type","linear"
+			,"font-size","17"
+			,"onclick","Reply"
+			,"font-family","default"
+			,"valign","center"
+//			,"background-image","btn_back"
+			);
+			binderGroup.addBinderToGroup(Common.genericId(), new PropertyBinder((IUMContextAccessor)context,button_reply,"value","#{res.msg_Reply}"));
+			button_reply.setOnClickListener(new View.OnClickListener() {
+			  @Override
+			  public void onClick(View v) {
+			    UMEventArgs args = new UMEventArgs(Msg_MessageContentDetailActivity.this);
+//			    actionGoBack(button_reply,args);
+
+			}
+			});
+			panel_buttongroup.addView(button_reply);
+	button_transfer = (UMButton)ThirdControl.createControl(new UMButton(context),ID_BUTTON_TRANSFER
+			,"padding-right","35"
+			,"halign","right"
+//			,"pressed-image","btn_back_touch"
+			,"width","64"
+			,"font-pressed-color","#f2adb2"
+			,"height","44"
+			,"weight","1"
+			,"color","#e50011"
+			,"layout-type","linear"
+			,"font-size","17"
+			,"onclick","Transfer"
+			,"font-family","default"
+			,"valign","center"
+//			,"background-image","btn_back"
+			);
+			binderGroup.addBinderToGroup(Common.genericId(), new PropertyBinder((IUMContextAccessor)context,button_transfer,"value","#{res.msg_Transfer}"));
+			button_transfer.setOnClickListener(new View.OnClickListener() {
+			  @Override
+			  public void onClick(View v) {
+			    UMEventArgs args = new UMEventArgs(Msg_MessageContentDetailActivity.this);
+//			    actionGoBack(button_transfer,args);
+
+			}
+			});
+			panel_buttongroup.addView(button_transfer);
+	return panel_buttongroup;
+}
+
 public View getPanel_msgtitleView(UMActivity context,
 		IBinderGroup binderGroup, UMDslConfigure configure) {
 	panel_msgtitle = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_PANEL_MSGTITLE
