@@ -428,6 +428,7 @@
     <string name="msg_Push">"Push"</string>
     <string name="msg_CSSMS">"CSSMS"</string>
     <string name="msg_InputMsgContent">"输入消息内容"</string>
+    <string name="msg_InputMsgTitle">"输入标题内容"</string>
     <string name="msg_IsNullContentOrAttach">"消息内容或附件不能同时为空."</string>
     <string name="msg_Return">"Back"</string>
     <string name="msg_AttachList">"附件列表"</string>

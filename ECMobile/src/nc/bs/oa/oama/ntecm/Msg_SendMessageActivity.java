@@ -58,6 +58,10 @@ protected UMLabel labelCSSMS = null;
 protected XRelativeLayout panel5 = null;
 protected UMTextArea txtContent = null;
 
+protected XHorizontalLayout panel_msgtitle = null;
+protected UMLabel label_msgtitle_title = null;
+protected UMTextArea txt_msgtitle = null;
+
 	
 	protected final static int ID_MSG_SENDMESSAGE = 56945695;
 protected final static int ID_VIEWPAGE0 = 2056009616;
@@ -94,7 +98,9 @@ protected final static int ID_LABELCSSMS = 811607387;
 protected final static int ID_PANEL5 = 2051886685;
 protected final static int ID_TXTCONTENT = 1008368824;
 
-	
+protected final static int ID_PANEL_MSGTITLE = 602446143;
+protected final static int ID_LABEL_MSGTITLE_TTTLE = 811607388;
+protected final static int ID_TXT_MSGTITLE = 811607389;
 	
 	@Override
 	public String getControllerName() {
@@ -226,6 +232,10 @@ this.setContentView(currentPage);
   idmap.put("labelCSSMS",ID_LABELCSSMS);
   idmap.put("panel5",ID_PANEL5);
   idmap.put("txtContent",ID_TXTCONTENT);
+  
+  idmap.put("panel_msgtitle", ID_PANEL_MSGTITLE);
+  idmap.put("label_msgtitle_title", ID_LABEL_MSGTITLE_TTTLE);
+  idmap.put("txt_msgtitle", ID_TXT_MSGTITLE);
 
 	}
 	
@@ -792,6 +802,8 @@ View navigatorbar0 = (View) getNavigatorbar0View((UMActivity)context,binderGroup
 viewPage0.addView(navigatorbar0);
 View panel1 = (View) getPanel1View((UMActivity)context,binderGroup,configure);
 viewPage0.addView(panel1);
+View panel_msgtitle = (View) getPanelMsgtitleView((UMActivity)context,binderGroup,configure);
+viewPage0.addView(panel_msgtitle);
 View panel3 = (View) getPanel3View((UMActivity)context,binderGroup,configure);
 viewPage0.addView(panel3);
 View panel4 = (View) getPanel4View((UMActivity)context,binderGroup,configure);
@@ -799,6 +811,68 @@ viewPage0.addView(panel4);
 
 return viewPage0;
 }
+public View getPanelMsgtitleView(UMActivity context, IBinderGroup binderGroup,
+		UMDslConfigure configure) {
+	panel_msgtitle = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_PANEL_MSGTITLE
+			,"padding-left","15"
+			,"padding-right","15"
+			,"height","44"
+			,"layout-type","linear"
+			,"width","fill"
+			,"onclick","OpenRecipientList"
+			,"margin-top","0"
+			,"valign","center"
+			,"background-image","list_row_mid1.png"
+			);
+	panel_msgtitle.setOnClickListener(new View.OnClickListener() {
+			  @Override
+			  public void onClick(View v) {
+			    UMEventArgs args = new UMEventArgs(Msg_SendMessageActivity.this);
+			    actionOpenRecipientList(panel_msgtitle,args);
+
+			}
+			});
+			label_msgtitle_title = (UMLabel)ThirdControl.createControl(new UMLabel(context),ID_LABEL_MSGTITLE_TTTLE
+			,"margin-right","10"
+			,"halign","left"
+			,"height","wrap"
+			,"color","#000000"
+			,"heightwrap","20.0"
+			,"layout-type","linear"
+			,"font-size","14"
+			,"width","50"
+			,"font-family","default"
+			,"valign","center"
+			);
+			binderGroup.addBinderToGroup(Common.genericId(), new PropertyBinder((IUMContextAccessor)context,label_msgtitle_title,"content","#{res.msg_msgtitle}"));
+			panel_msgtitle.addView(label_msgtitle_title);
+			
+			txt_msgtitle = (UMTextArea)ThirdControl.createControl(new UMTextArea(context),ID_TXT_MSGTITLE
+					,"bindfield","msgtitle"
+					,"padding-right","15"
+					,"padding-left","15"
+					,"padding-top","1"
+					,"halign","LEFT"
+					,"width","fill"
+					,"padding-bottom","1"
+					,"height","42"
+					,"color","#000000"
+					,"font-size","14"
+					,"background","#ffffff"
+					,"layout-type","relative"
+					,"font-family","default"
+					,"left","0.0"
+					,"top","0.0"
+					);
+					UMTextBinder txtmsgtitle_binder = new UMTextBinder((IUMContextAccessor)context);
+					txtmsgtitle_binder.setBindInfo(new BindInfo("msgtitle"));
+					txtmsgtitle_binder.setControl(txt_msgtitle);
+					binderGroup.addBinderToGroup(ID_TXT_MSGTITLE, txtmsgtitle_binder);
+					binderGroup.addBinderToGroup(Common.genericId(), new PropertyBinder((IUMContextAccessor)context,txt_msgtitle,"placeholder","#{res.msg_InputMsgTitle}"));
+					panel_msgtitle.addView(txt_msgtitle);
+			return panel_msgtitle;
+}
+
 public UMWindow getCurrentWindow(final UMActivity context,IBinderGroup binderGroup, UMDslConfigure configure) {
 msg_SendMessage = (UMWindow)ThirdControl.createControl(new UMWindow(context),ID_MSG_SENDMESSAGE
 ,"halign","center"

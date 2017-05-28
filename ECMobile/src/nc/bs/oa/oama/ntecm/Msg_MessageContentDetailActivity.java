@@ -667,7 +667,7 @@ public View getPanel_msgtitleView(UMActivity context,
 			,"height","44"
 			,"layout-type","linear"
 			,"width","fill"
-			,"margin-top","5"
+			,"margin-top","0"
 			,"valign","center"
 			,"background-image","list_row_mid1.png"
 			);
