@@ -714,7 +714,7 @@ public View getPanelButtonGroupView(UMActivity context,
 			  public void onClick(View v) {
 			    UMEventArgs args = new UMEventArgs(Msg_MessageContentDetailActivity.this);
 //			    actionGoBack(button_reply,args);
-
+			    actionReply(button_reply,args);
 			}
 			});
 			panel_buttongroup.addView(button_reply);
@@ -740,7 +740,7 @@ public View getPanelButtonGroupView(UMActivity context,
 			  public void onClick(View v) {
 			    UMEventArgs args = new UMEventArgs(Msg_MessageContentDetailActivity.this);
 //			    actionGoBack(button_transfer,args);
-
+			    actionTransfer(button_transfer,args);
 			}
 			});
 			panel_buttongroup.addView(button_transfer);
@@ -862,6 +862,36 @@ public void actionOpenAttachmentList4View(View control, UMEventArgs args) {
   this.dataCollect();
     args.put("iskeep","true");
     args.put("containerName","");
+  ActionProcessor.exec(this, actionid, args);
+UMView.open(args);
+}
+
+public void actionReply(View control, UMEventArgs args) {
+    String actionid = "NewMessage";
+    args.put("viewid","nc.bs.oa.oama.ecm.Msg_SendMessage");
+    args.put("callback","");
+    args.put("iskeep","true");
+    args.put("containerName","");
+    args.put("actionType","Reply");
+    args.put("msgtitle","#{msgtitle}");
+    args.put("sendBy","#{sendBy}");
+    args.put("content","#{content}");
+  ActionProcessor.exec(this, actionid, args);
+UMView.open(args);
+}
+
+public void actionTransfer(View control, UMEventArgs args) {
+    String actionid = "NewMessage";
+    args.put("viewid","nc.bs.oa.oama.ecm.Msg_SendMessage");
+    args.put("callback","");
+    args.put("iskeep","true");
+    args.put("containerName","");
+    args.put("actionType","Transfer");
+    args.put("transfer_msgtitle","#{msgtitle}");
+    args.put("msgtitle","#{msgtitle}");
+    args.put("sendBy","#{sendBy}");
+    args.put("content","#{content}");
+   
   ActionProcessor.exec(this, actionid, args);
 UMView.open(args);
 }

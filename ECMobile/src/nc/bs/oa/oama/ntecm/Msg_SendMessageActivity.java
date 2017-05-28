@@ -121,7 +121,7 @@ protected final static int ID_TXT_MSGTITLE = 811607389;
 		ULog.logLC("onCreate", this);
 		super.onCreate(savedInstanceState);
         onInit(savedInstanceState);
-        
+        actionOnLoadSendMsg(currentPage,new UMEventArgs(this));
 	}
 	
 	@Override
@@ -1006,6 +1006,13 @@ public void actionSendTypeCallback(View control, UMEventArgs args) {
     args.put("containerName","");
   ActionProcessor.exec(this, actionid, args);
   this.getContainer().exec(actionid, "sendTypeCallback",UMActivity.getViewId(control),args);
+}
+
+public void actionOnLoadSendMsg(View control, UMEventArgs args) {
+//    String actionid = "OnLoadSendMsg";
+//    args.put("containerName","");
+//  ActionProcessor.exec(this, actionid, args);
+//  this.getContainer().exec(actionid, "OnLoadSendMsg",UMActivity.getViewId(control),args);
 }
 
 

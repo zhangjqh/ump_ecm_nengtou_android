@@ -77,6 +77,17 @@ function nc$bs$oa$oama$ecm$msg_SendMessageController$SendMessage(ctx){
 		alert($res.getResString("msg_RecipientIsNull"));//收件人不能为空
 		return;
 	}
+	var msgtitle = ctx.get("msgtitle");
+	if (!msgtitle){
+		alert("收件人不能为空");//收件人不能为空
+		return;
+	}
+	
+	var actionType = ctx.params()["actionType"];
+	if (!(actionType == null || actionType == "" || typeof(actionType) == 'undefined')){
+	 		params["actionType"] = actionType;
+	}
+	
 	var content = ctx.get("content");
 	var attachmentName = getAttachmentNameCache();
 	if(!attachmentName && !content)
@@ -105,6 +116,7 @@ function getParams(ctx){
 	return {
 		"viewid" : "nc.bs.oa.oama.msgList.MsgListController",
 		"action" : "save",
+		"isDataCollect" : "true",
 		"callback" : "ExcuteResultDialog",
 		"error" : "errorDialog",
 		"contextmapping" : "ResultValue",
@@ -114,6 +126,33 @@ function getParams(ctx){
 function  nc$bs$oa$oama$ecm$msg_SendMessageController$onLoadSendType(ctx){
 	var params = getSendTypeParams(ctx);
 	UM_NativeCall.callService("UMService.callAction", jsonToString(params));
+	
+	//alert("发送消息界面初始化函数1");
+	try{
+		var params1 = ctx.params();
+	 	var actionType = params1["actionType"];
+	 	if (actionType == null || actionType == "" || typeof(actionType) == 'undefined'){
+	 		return;
+	 	}
+	 	//动作类型不为空，说明是回复或者转发
+	 	var msgtitle = params1["msgtitle"];
+	 	var content = params1["content"];
+	 	var sendBy = params1["sendBy"];
+	 	
+	 	if (actionType == "Reply"){
+	 		msgtitle = "回复:" + msgtitle;
+	 	}else if (actionType == "Transfer"){
+	 		msgtitle = "转发:" + msgtitle;
+	 	}
+	 	
+	 	ctx.load({"msgtitle":msgtitle,"content":content,"recipientNames":sendBy});
+	 }catch(e){
+        if(e.stack){
+            alert(e.stack);
+        }else{
+            alert(e.name + ":" + e.message);
+        }
+    }
 };
 function getSendTypeParams(ctx){
 	var sendType = ctx.unload();
@@ -213,6 +252,9 @@ function nc$bs$oa$oama$ecm$msg_SendMessageController$onCloseClick(ctx){
 	UM_NativeCall.callService("UMView.close", jsonToString(params));	
 	
 }
+function nc$bs$oa$oama$ecm$msg_SendMessageController$OnLoadSendMsg(ctx){
+	alert("发送消息界面初始化函数");
+}
 nc.bs.oa.oama.ecm.msg_SendMessageController.prototype = {
     initialize : nc$bs$oa$oama$ecm$msg_SendMessageController$initialize,
     errorDialog : nc$bs$oa$oama$ecm$msg_SendMessageController$errorDialog,
@@ -222,6 +264,7 @@ nc.bs.oa.oama.ecm.msg_SendMessageController.prototype = {
     AttachmentCallback : nc$bs$oa$oama$ecm$msg_SendMessageController$AttachmentCallback,
     onLoadSendType : nc$bs$oa$oama$ecm$msg_SendMessageController$onLoadSendType,
     sendTypeCallback : nc$bs$oa$oama$ecm$msg_SendMessageController$sendTypeCallback,
-    SendMessage : nc$bs$oa$oama$ecm$msg_SendMessageController$SendMessage
+    SendMessage : nc$bs$oa$oama$ecm$msg_SendMessageController$SendMessage,
+    OnLoadSendMsg : nc$bs$oa$oama$ecm$msg_SendMessageController$OnLoadSendMsg
 };
 nc.bs.oa.oama.ecm.msg_SendMessageController.registerClass('nc.bs.oa.oama.ecm.msg_SendMessageController');
