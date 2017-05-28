@@ -51,6 +51,14 @@ protected UMLabel label7 = null;
 protected XVerticalLayout panel7 = null;
 protected UMLabel label10 = null;
 
+//标题panel
+protected XHorizontalLayout panel_msgtitle = null;
+//标题字段名
+protected UMLabel label_msgtitle_title = null;
+//标题字段值
+protected UMLabel label_msgtitle = null;
+
+
 	
 	protected final static int ID_MSG_MESSAGECONTENTDETAIL = 1652453130;
 protected final static int ID_VIEWPAGE0 = 1791582154;
@@ -79,6 +87,10 @@ protected final static int ID_PANEL6 = 959035826;
 protected final static int ID_LABEL7 = 988177335;
 protected final static int ID_PANEL7 = 1631573968;
 protected final static int ID_LABEL10 = 1215368941;
+
+protected final static int ID_PANEL_MSGTITLE = 115984779;
+protected final static int ID_LABEL_MSGTITLE_TITLE = 294063608;
+protected final static int ID_LABEL_MSGTITLE = 294063609;
 
 	
 	
@@ -201,6 +213,10 @@ this.setContentView(currentPage);
   idmap.put("label7",ID_LABEL7);
   idmap.put("panel7",ID_PANEL7);
   idmap.put("label10",ID_LABEL10);
+  
+  idmap.put("panel_msgtitle", ID_PANEL_MSGTITLE);
+  idmap.put("label_msgtitle_title", ID_LABEL_MSGTITLE_TITLE);
+  idmap.put("label_mssgtitle", ID_LABEL_MSGTITLE);
 
 	}
 	
@@ -627,6 +643,9 @@ View navigatorbar0 = (View) getNavigatorbar0View((UMActivity)context,binderGroup
 panel1.addView(navigatorbar0);
 View panel2 = (View) getPanel2View((UMActivity)context,binderGroup,configure);
 panel1.addView(panel2);
+//添加明细界面的标题
+View panel_msgtitle = (View) getPanel_msgtitleView((UMActivity)context,binderGroup,configure);
+panel1.addView(panel_msgtitle);
 View panel3 = (View) getPanel3View((UMActivity)context,binderGroup,configure);
 panel1.addView(panel3);
 View panel5 = (View) getPanel5View((UMActivity)context,binderGroup,configure);
@@ -640,6 +659,63 @@ panel1.addView(panel7);
 
 return panel1;
 }
+public View getPanel_msgtitleView(UMActivity context,
+		IBinderGroup binderGroup, UMDslConfigure configure) {
+	panel_msgtitle = (XHorizontalLayout)ThirdControl.createControl(new XHorizontalLayout(context),ID_PANEL_MSGTITLE
+			,"padding-left","15"
+			,"padding-right","15"
+			,"height","44"
+			,"layout-type","linear"
+			,"width","fill"
+			,"margin-top","5"
+			,"valign","center"
+			,"background-image","list_row_mid1.png"
+			);
+			label_msgtitle_title = (UMLabel)ThirdControl.createControl(new UMLabel(context),ID_LABEL_MSGTITLE_TITLE
+			,"margin-right","15"
+			,"halign","left"
+			,"height","wrap"
+			,"color","#000000"
+			,"heightwrap","23.0"
+			,"layout-type","linear"
+			,"font-size","16"
+			,"width","70"
+			,"font-family","default"
+			,"valign","center"
+			);
+			binderGroup.addBinderToGroup(Common.genericId(), new PropertyBinder((IUMContextAccessor)context,label_msgtitle_title,"content","#{res.msg_msgtitle}"));
+			panel_msgtitle.addView(label_msgtitle_title);
+			label_msgtitle = (UMLabel)ThirdControl.createControl(new UMLabel(context),ID_LABEL_MSGTITLE
+			,"bindfield","msgtitle"
+			,"halign","right"
+			,"weight","1"
+			,"width","0"
+			,"height","wrap"
+			,"color","#6f6f6f"
+			,"heightwrap","23.0"
+			,"font-size","16"
+			,"layout-type","linear"
+			,"onclick","action:label2_onclick"
+			,"font-family","default"
+			,"valign","center"
+			);
+			UMTextBinder label_msgtitle_binder = new UMTextBinder((IUMContextAccessor)context);
+			label_msgtitle_binder.setBindInfo(new BindInfo("msgtitle"));
+			label_msgtitle_binder.setControl(label_msgtitle);
+			binderGroup.addBinderToGroup(ID_LABEL_MSGTITLE, label_msgtitle_binder);
+			label_msgtitle.setOnClickListener(new View.OnClickListener() {
+			  @Override
+			  public void onClick(View v) {
+			    UMEventArgs args = new UMEventArgs(Msg_MessageContentDetailActivity.this);
+			    actionLabel2_onclick(label_msgtitle,args);
+
+			}
+			});
+			panel_msgtitle.addView(label_msgtitle);
+
+			return panel_msgtitle;
+}
+
 public View getViewPage0View(final UMActivity context,IBinderGroup binderGroup, UMDslConfigure configure) {
 viewPage0 = (XVerticalLayout)ThirdControl.createControl(new XVerticalLayout(context),ID_VIEWPAGE0
 ,"halign","center"

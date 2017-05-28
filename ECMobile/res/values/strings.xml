@@ -410,6 +410,7 @@
     <string name="msg_Send">"发送"</string>
     <string name="msg_Recipient">"收件人"</string>
     <string name="msg_SendPerson">"发送人"</string>
+    <string name="msg_msgtitle">"标题"</string>
     <string name="msg_Topic">"主题"</string>
     <string name="msg_Attachment">"附件:"</string>
     <string name="msg_ReadMessage">"已读消息列表"</string>
