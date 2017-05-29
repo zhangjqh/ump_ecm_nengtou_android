@@ -138,14 +138,20 @@ function  nc$bs$oa$oama$ecm$msg_SendMessageController$onLoadSendType(ctx){
 	 	var msgtitle = params1["msgtitle"];
 	 	var content = params1["content"];
 	 	var sendBy = params1["sendBy"];
+	 	var sendDate = params1["sendDate"];
 	 	
+	 	var newcontent = "\r\n";
+	 	newcontent += "----------------------------\r\n";
+	 	newcontent += "发件人\:" + sendBy + "\r\n";
+	 	newcontent += "发送时间\:" + sendDate + "\r\n";
+	 	newcontent += "发件内容\:" + content + "\r\n";
 	 	if (actionType == "Reply"){
 	 		msgtitle = "回复:" + msgtitle;
+	 		ctx.load({"msgtitle":msgtitle,"content":newcontent,"recipientNames":sendBy});
 	 	}else if (actionType == "Transfer"){
 	 		msgtitle = "转发:" + msgtitle;
+	 		ctx.load({"msgtitle":msgtitle,"content":newcontent});
 	 	}
-	 	
-	 	ctx.load({"msgtitle":msgtitle,"content":content,"recipientNames":sendBy});
 	 }catch(e){
         if(e.stack){
             alert(e.stack);

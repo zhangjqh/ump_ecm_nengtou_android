@@ -875,6 +875,7 @@ public void actionReply(View control, UMEventArgs args) {
     args.put("actionType","Reply");
     args.put("msgtitle","#{msgtitle}");
     args.put("sendBy","#{sendBy}");
+    args.put("sendDate","#{sendDate}");
     args.put("content","#{content}");
   ActionProcessor.exec(this, actionid, args);
 UMView.open(args);
@@ -890,6 +891,7 @@ public void actionTransfer(View control, UMEventArgs args) {
     args.put("transfer_msgtitle","#{msgtitle}");
     args.put("msgtitle","#{msgtitle}");
     args.put("sendBy","#{sendBy}");
+    args.put("sendDate","#{sendDate}");
     args.put("content","#{content}");
    
   ActionProcessor.exec(this, actionid, args);
