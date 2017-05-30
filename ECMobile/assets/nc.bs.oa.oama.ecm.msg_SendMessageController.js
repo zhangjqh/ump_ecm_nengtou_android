@@ -139,10 +139,25 @@ function  nc$bs$oa$oama$ecm$msg_SendMessageController$onLoadSendType(ctx){
 	 	var content = params1["content"];
 	 	var sendBy = params1["sendBy"];
 	 	var sendDate = params1["sendDate"];
+	 	var senderid = params["senderid"];
+	 	var receiverid = params["receiverid"];
+	 	var receiveBy = params["receiveBy"];
+	 	
+	 	var array = getCache();
+	 	array = $stringToJSON(array);
+	 	var autoselectedperson = {
+	 			"checked" : true,
+	 			"id" : senderid,
+	 			"name" : sendBy,
+	 			"ListViewSelector" : 1
+	 	};
+	 	array.push(autoselectedperson);
+	 	$cache.writeFile("ECMPERSONSELECTED",array || []);
 	 	
 	 	var newcontent = "\r\n";
 	 	newcontent += "----------------------------\r\n";
 	 	newcontent += "发件人\:" + sendBy + "\r\n";
+	 	newcontent += "收件人\:" + receiveBy + "\r\n";
 	 	newcontent += "发送时间\:" + sendDate + "\r\n";
 	 	newcontent += "发件内容\:" + content + "\r\n";
 	 	if (actionType == "Reply"){
