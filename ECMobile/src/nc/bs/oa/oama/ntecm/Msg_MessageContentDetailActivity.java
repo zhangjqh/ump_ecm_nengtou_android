@@ -899,6 +899,7 @@ public void actionTransfer(View control, UMEventArgs args) {
     args.put("receiverid","#{receiverid}");
     args.put("sendDate","#{sendDate}");
     args.put("content","#{content}");
+    args.put("origin_msgid","#{msgID}");
    
   ActionProcessor.exec(this, actionid, args);
 UMView.open(args);
