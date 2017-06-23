@@ -86,7 +86,7 @@ function nc$bs$oa$oama$ecm$msg_SendMessageController$SendMessage(ctx){
 	var actionType = ctx.params()["actionType"];
 	if (!(actionType == null || actionType == "" || typeof(actionType) == 'undefined')){
 	 		params["actionType"] = actionType;
-	 		if (actiontype == "Transfer"){
+	 		if (actionType == "Transfer"){
             	params["origin_msgid"] = ctx.params()["origin_msgid"]
         	}
 	}
@@ -132,19 +132,18 @@ function  nc$bs$oa$oama$ecm$msg_SendMessageController$onLoadSendType(ctx){
 	
 	//alert("发送消息界面初始化函数1");
 	try{
-		var params1 = ctx.params();
-	 	var actionType = params1["actionType"];
+	 	var actionType = ctx.params()["actionType"];
 	 	if (actionType == null || actionType == "" || typeof(actionType) == 'undefined'){
 	 		return;
 	 	}
 	 	//动作类型不为空，说明是回复或者转发
-	 	var msgtitle = params1["msgtitle"];
-	 	var content = params1["content"];
-	 	var sendBy = params1["sendBy"];
-	 	var sendDate = params1["sendDate"];
-	 	var senderid = params["senderid"];
-	 	var receiverid = params["receiverid"];
-	 	var receiveBy = params["receiveBy"];
+	 	var msgtitle = ctx.params()["msgtitle"];
+	 	var content = ctx.params()["content"];
+	 	var sendBy = ctx.params()["sendBy"];
+	 	var sendDate = ctx.params()["sendDate"];
+	 	var senderid = ctx.params()["senderid"];
+	 	var receiverid = ctx.params()["receiverid"];
+	 	var receiveBy = ctx.params()["receiveBy"];
 	 	
 	 	var newcontent = "\\r\\n\\r\\n";
 	 	newcontent += "----------------------------\\r\\n";
